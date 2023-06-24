@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/fondo.png);
+}
+
+#game-start {
+    padding: 20px 0px;
+    margin-top: 10%;
+}
+
+#game-container {
+    display: flex;
+    width: 100vw;
+    padding: 20px 0px;
+    justify-content: center;
+}
+
+#game-screen {
+    display: none;
+    align-content: center;
+    padding: 20px 0px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../images/road.png);
+    background-size: cover;
+    animation: slide 5s linear infinite;
+    width: 600px;
+    height: 500px;
+}
+
+@keyframes slide {
+    0% {
+        background-position: 0 -1000px;
+    }
+
+    95% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 0 50px;
+    }
+}
+
+#game-over {
+    display: none;
+}
+
+#game-over h1 {
+    color: #12c2e9;
+}
+
+#game-start p {
+    font-size: 20px;
+    color: #12c2e9;
+
+}
+
+.logo-img {
+    width: 450px;
+}
+
+body button {
+    font-size: 30px;
+    background-color: #1A004D;
+    color: #12c2e9;
+    padding: 20px 40px;
+    border: 2%;
+    border-color: #12c2e9;
+    box-shadow: 0;
+    border-radius: 8px;
+    font-family: sans-serif;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+#start-button:hover {
+    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
+    border: 3px solid #FF5757;
+    color: #FF5757;
+}

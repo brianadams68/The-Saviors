@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styless/style.css" />
+    <title>The Saviors</title>
+</head>
+
+<body>
+    <main>
+        <!-- #game-start is initially shown on the game start screen -->
+        <div id="game-start">
+            <img src="./images/t.png" alt="logo-img" class="logo-img" />
+            <br />
+            <button id="start-button">Start Game</button>
+            <br>
+            <br>
+            <p>Use the arrows to control the plane!</p>
+
+        </div>
+
+        <div id="game-container">
+            <div>
+                <h2>Stats</h2>
+                <p>Score: <span id="score">0</span></p>
+                <p>Lives: <span id="lives">3</span></p>
+            </div>
+            <!-- #game-screen is initially hidden using CSS style display: none -->
+            <div id="game-screen"></div>
+        </div>
+
+        <!-- #game-over CSS style display: none -->
+        <div id="game-over">
+            <img src="./images/t.png" alt="logo-img" class="logo-img" />
+            <h1>Game Over</h1>
+            <br />
+            <button id="restart-button">Restart</button>
+        </div>
+    </main>
+</body>
+
+</html>
