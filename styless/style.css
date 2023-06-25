@@ -11,31 +11,48 @@ body {
 #game-start {
     padding: 20px 0px;
     margin-top: 10%;
+    width: 100vw;
+    height: 100vh;
+}
+
+#game-start p {
+    font-size: 20px;
+    color: #12c2e9;
 }
 
 #game-container {
     display: flex;
     width: 100vw;
-    padding: 20px 0px;
-    justify-content: center;
+    justify-content: flex-start;
+    color: #12c2e9;
 }
+
+#game-container h2 {
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+#game-container p {
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
 
 #game-screen {
     display: none;
     align-content: center;
-    padding: 20px 0px;
-    overflow: hidden;
     position: relative;
-    background-image: url(../images/road.png);
+    background-image: url(../images/background.png);
     background-size: cover;
     animation: slide 5s linear infinite;
-    width: 600px;
-    height: 500px;
+    width: 100vw;
+    height: 100vh;
 }
 
 @keyframes slide {
+
     0% {
-        background-position: 0 -1000px;
+        background-position: 1500px 0;
     }
 
     95% {
@@ -43,7 +60,7 @@ body {
     }
 
     100% {
-        background-position: 0 50px;
+        background-position: -50px 0;
     }
 }
 
@@ -53,12 +70,6 @@ body {
 
 #game-over h1 {
     color: #12c2e9;
-}
-
-#game-start p {
-    font-size: 20px;
-    color: #12c2e9;
-
 }
 
 .logo-img {
@@ -77,6 +88,11 @@ body button {
     font-family: sans-serif;
     -webkit-transition: all .15s ease-in-out;
     transition: all .15s ease-in-out;
+}
+
+#start-button {
+    margin-top: 8%;
+    margin-bottom: 1%;
 }
 
 #start-button:hover {
