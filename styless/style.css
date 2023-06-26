@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/lvdc-game-over');
+
 body {
     margin: 0;
     padding: 0;
@@ -24,17 +26,22 @@ body {
     display: flex;
     width: 100vw;
     justify-content: flex-start;
-    color: #12c2e9;
+    color:  #12c2e9;
 }
 
 #game-container h2 {
     padding-left: 10px;
     padding-right: 5px;
+    border-bottom: solid 5px #12c2e9;
+    border-right: solid 5px #12c2e9;
+    border-radius: 8px;
 }
 
 #game-container p {
-    padding-left: 10px;
+    padding-left: 15px;
     padding-top: 15px;
+    border-bottom: solid 3px #12c2e9;
+    border-radius: 10px;
 }
 
 
@@ -42,21 +49,15 @@ body {
     display: none;
     align-content: center;
     position: relative;
-    background-image: url(../images/background.png);
+    background-image: url(../images/Galaxy1.png);
     background-size: cover;
-    animation: slide 5s linear infinite;
-    width: 100vw;
-    height: 100vh;
+    animation: slide 1s linear infinite;
 }
 
 @keyframes slide {
 
     0% {
-        background-position: 1500px 0;
-    }
-
-    95% {
-        background-position: 0 0;
+        background-position: 1000px 0;
     }
 
     100% {
@@ -66,10 +67,24 @@ body {
 
 #game-over {
     display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/batman-and-robin.gif);
 }
 
 #game-over h1 {
+    padding-top: 40%;
     color: #12c2e9;
+    font-family: 'LVDC Game Over 2', sans-serif;
+}
+
+#game-over p {
+    color: #12c2e9;
+    padding-top: 10px;
+    font-family: 'LVDC Game Over 2', sans-serif;
 }
 
 .logo-img {
@@ -93,9 +108,22 @@ body button {
 #start-button {
     margin-top: 8%;
     margin-bottom: 1%;
+    box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
+    border: 3px solid #ff575700;
 }
 
 #start-button:hover {
+    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
+    border: 3px solid #FF5757;
+    color: #FF5757;
+}
+
+#restart-button {
+    box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
+    border: 3px solid #ff575700;
+}
+
+#restart-button:hover {
     box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
     border: 3px solid #FF5757;
     color: #FF5757;

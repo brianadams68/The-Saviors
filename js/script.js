@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
         game.start()
         document.addEventListener('keydown', event => {
             const key = event.key;
-            const possibleKeyStrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown"];
+            const possibleKeyStrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown", "Space"];
 
             if (possibleKeyStrokes.includes(key)) {
                 event.preventDefault();
@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
                 // Update ship directionX and directionY based on the key pressed
                 switch (key) {
                     case "ArrowLeft":
-                        game.ship.directionX = -4;
+                        game.ship.directionX = -5;
                         break
                     case "ArrowUp":
                         game.ship.directionY = -4;
@@ -32,6 +32,9 @@ window.addEventListener('load', () => {
                     case "ArrowDown":
                         game.ship.directionY = 4;
                         break
+                    case "Space":
+                        game.ship.canShoot();
+                        break;
                 }
 
                 console.log(game.ship.directionX, game.ship.directionY)
@@ -63,5 +66,9 @@ window.addEventListener('load', () => {
 
     startButton.addEventListener('click', function () {
         startGame();
+    });
+
+    restartButton.addEventListener('click', () => {
+        location.reload()
     });
 });

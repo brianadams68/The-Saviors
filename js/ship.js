@@ -3,9 +3,12 @@ class Ship {
     constructor(gameScreen) {
         this.gameScreen = gameScreen
         this.with = 80
-        this.height = 130
-        this.top = 700
-        this.left = 200
+        this.height = 110
+        this.top = 500
+        this.left = 300
+        this.bullets = [];
+        this.bulletSpeed = 5;
+        this.canShoot = true;
         this.directionX = 0
         this.directionY = 0
         this.element = document.createElement('img')
@@ -25,24 +28,24 @@ class Ship {
     move() {
         this.left += this.directionX;
         this.top += this.directionY;
-        if (this.left < 10) {
-            this.left = 10
+        if (this.left < 50) {
+            this.left = 50
         }
-        if (this.top < 0) {
-            this.top = 0
+        if (this.top < 100) {
+            this.top = 100
         }
         // handles right hand side
         if (this.left > this.gameScreen.offsetWidth - this.with - 180) {
             this.left = this.gameScreen.offsetWidth - this.with - 180
         }
         // handles bottom side
-        if (this.top > this.gameScreen.offsetHeight - this.height - 180) {
-            this.top = this.gameScreen.offsetHeight - this.height - 180;
+        if (this.top > this.gameScreen.offsetHeight - this.height - 380) {
+            this.top = this.gameScreen.offsetHeight - this.height - 380;
         }
 
         this.updatePosition();
     }
-
+    
     updatePosition() {
         this.element.style.top = `${this.top}px`
         this.element.style.left = `${this.left}px`
@@ -63,4 +66,32 @@ class Ship {
             return false;
         }
     }
+
+    //Bullets
+
+    // Evento de escucha para el disparo
+    shoot() {
+        // Crear una nueva bala y agregarla al arreglo de balas
+        const bullet = new Bullet(this.gameScreen, this.left, this.top);
+        this.bullets.push(bullet);
+    
+        // Establecer un temporizador para controlar la frecuencia de disparo
+        this.canShoot = false;
+        setTimeout(() => {
+          this.canShoot = true;
+        }, 300); // Puedes ajustar el valor de tiempo según tus necesidades
+      }
+
+      moveBullets() {
+        // Mover todas las balas en el arreglo
+        this.bullets.forEach((bullet) => {
+          bullet.move();
+    
+          // Si la bala está fuera de la pantalla, eliminarla del arreglo
+          if (bullet.left > this.gameScreen.offsetWidth) {
+            bullet.element.remove();
+            this.bullets.splice(this.bullets.indexOf(bullet), 1);
+          }
+        });
+      }
 }

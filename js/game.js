@@ -5,7 +5,7 @@ class Game {
             ('game-start')
         this.gameScreen = document.getElementById
             ('game-screen')
-        this.gameEndScreen = document.getElementById
+        this.gameOver = document.getElementById
             ('game-over')
 
         this.ship = null;
@@ -13,6 +13,7 @@ class Game {
         this.width = 100
         this.ship = new Ship(this.gameScreen)
         this.obstacle = [new Obstacle(this.gameScreen)]
+        this.bullet = [new Bullet(this.gameScreen)]
         this.isGameOver = false
         this.score = 0
         this.lives = 3
@@ -31,13 +32,13 @@ class Game {
     gameLoop() {
         this.update()
 
-        if (Math.random() > 0.98 && this.obstacle.length < 1) {
+        if (Math.random() > 0.98 && this.obstacle.length < 25) {
             this.obstacle.push(new Obstacle(this.gameScreen));
         }
 
 
         if (this.isGameOver) {
-            console.log('GameOver')
+            this.endGame()
         }
         requestAnimationFrame(() => this.gameLoop())
     }
@@ -45,13 +46,17 @@ class Game {
     update() {
         this.ship.move()
         const obstacleToKeep = []
+
         this.obstacle.forEach(obstacle => {
             obstacle.move()
+
             if (this.ship.didCollide(obstacle)) {
                 obstacle.element.remove();
                 this.lives -= 1
-            } else if (obstacle.right > this.gameScreen.offsetHeight) {
+                document.getElementById('lives').textContent = this.lives; // Actualizar la interfaz del juego para reflejar la disminución de vidas
+            } else if (obstacle.left > this.gameScreen.offsetHeight) {
                 this.score += 1
+                document.getElementById('score').textContent = this.score; // Actualizar la interfaz del juego para reflejar el aumento de puntaje
             } else {
                 obstacleToKeep.push(obstacle)
             }
@@ -63,4 +68,17 @@ class Game {
             this.isGameOver = true
         }
     }
+
+    endGame() {
+        this.ship.element.remove()
+        this.obstacle.forEach(obstacle => obstacle.element.remove())
+
+        this.gameOver.style.width = `${this.width}vw`
+        this.gameOver.style.height = `${this.height}vh`
+    
+        // Hide game screen
+        this.gameScreen.style.display = 'none'
+        // Show end game screen
+        this.gameOver.style.display = 'block'
+      }
 }
