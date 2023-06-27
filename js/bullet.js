@@ -21,7 +21,7 @@ class Bullet {
     }
   
     move() {
-        this.left += 3
+        this.left += 5
         
         this.updatePosition();
     }

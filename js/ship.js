@@ -31,8 +31,8 @@ class Ship {
         if (this.left < 50) {
             this.left = 50
         }
-        if (this.top < 100) {
-            this.top = 100
+        if (this.top < 130) {
+            this.top = 130
         }
         // handles right hand side
         if (this.left > this.gameScreen.offsetWidth - this.with - 180) {
