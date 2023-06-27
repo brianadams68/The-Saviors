@@ -4,6 +4,8 @@ window.addEventListener('load', () => {
         ("start-button")
     const restartButton = document.getElementById
         ("restart-button")
+    const newGameButton = document.getElementById
+        ("new-game-button")
 
     let game
 
@@ -70,6 +72,10 @@ window.addEventListener('load', () => {
     });
 
     restartButton.addEventListener('click', () => {
+        location.reload()
+    });
+
+    newGameButton.addEventListener('click', () => {
         location.reload()
     });
 });

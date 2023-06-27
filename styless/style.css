@@ -129,7 +129,7 @@ body button {
     color: #FF5757;
 }
 
-#you-won {
+#you-win {
     display: none;
     width: 100vw;
     height: 100vh;
@@ -139,14 +139,25 @@ body button {
     background-image: url(../images/youWon.gif);
 }
 
-#you-won h1 {
+#you-win h1 {
     padding-top: 40%;
     color: #12c2e9;
     font-family: 'LVDC Game Over 2', sans-serif;
 }
 
-#you-won p {
+#you-win p {
     color: #12c2e9;
     padding-top: 10px;
     font-family: 'LVDC Game Over 2', sans-serif;
+}
+
+#new-game-button {
+    box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
+    border: 3px solid #ff575700;
+}
+
+#new-game-button:hover {
+    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
+    border: 3px solid #FF5757;
+    color: #FF5757;
 }

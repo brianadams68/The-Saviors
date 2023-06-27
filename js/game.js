@@ -4,7 +4,7 @@ class Game {
         this.startScreen = document.getElementById('game-start')
         this.gameScreen = document.getElementById('game-screen')
         this.gameOver = document.getElementById('game-over')
-        this.youWon = document.getElementById('you-won')
+        this.youWin = document.getElementById('you-win')
 
         this.ship = null;
         this.height = 100
@@ -28,21 +28,21 @@ class Game {
     }
 
     gameLoop() {
-        this.update()
-
+        this.update();
+    
         if (Math.random() > 0.98 && this.obstacle.length < 30) {
             this.obstacle.push(new Obstacle(this.gameScreen));
         }
-
-
+    
         if (this.isGameOver) {
-            this.endGame()
+            this.endGame();
         }
         if (this.youDidWin) {
-            this.youDidWin()
+            this.youWon();
         }
-        requestAnimationFrame(() => this.gameLoop())
+        requestAnimationFrame(() => this.gameLoop());
     }
+    
 
     update() {
         this.ship.move()
@@ -101,16 +101,16 @@ class Game {
         this.gameOver.style.display = 'block'
       }
 
-    youWin() {
+    youWon() {
         this.ship.element.remove()
         this.obstacle.forEach(obstacle => obstacle.element.remove())
 
-        this.youWon.style.width = `${this.width}vw`
-        this.youWon.style.height = `${this.height}vh`
+        this.youWin.style.width = `${this.width}vw`
+        this.youWin.style.height = `${this.height}vh`
     
         // Hide game screen
         this.gameScreen.style.display = 'none'
-        // Show end game screen
-        this.youWon.style.display = 'block'
+        // Show winner screen
+        this.youWin.style.display = 'block'
       }
 }
