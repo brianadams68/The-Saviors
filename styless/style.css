@@ -5,21 +5,24 @@ body {
     padding: 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url(../images/fondo.png);
 }
 
-#game-start {
-    padding: 20px 0px;
-    margin-top: 10%;
+#myVideo {
     width: 100vw;
     height: 100vh;
-}
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
 
-#game-start p {
-    font-size: 20px;
-    color: #12c2e9;
+#game-start {
+    display: block;
+    flex-direction: row;
+    justify-content: end;
 }
 
 #game-container {
@@ -118,8 +121,7 @@ body button {
 }
 
 #start-button {
-    margin-top: 8%;
-    margin-bottom: 1%;
+    align-self: flex-end;
     box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
     border: 3px solid #ff575700;
 }
