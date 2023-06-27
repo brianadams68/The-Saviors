@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/lvdc-game-over');     
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');     
 
 body {
     margin: 0;
@@ -77,7 +77,7 @@ body {
 
 #game-over h1 {
     padding-top: 40%;
-    font-family: 'LVDC Game Over 2', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size:3em;
     text-align:center;
     animation: example 1s infinite;
@@ -96,7 +96,7 @@ body {
 #game-over p {
     color: #12c2e9;
     padding-top: 10px;
-    font-family: 'LVDC Game Over 2', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 .logo-img {
@@ -154,7 +154,7 @@ body button {
 #you-win h1 {
     padding-top: 40%;
     color: #12c2e9;
-    font-family: 'LVDC Game Over 2', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     animation: example 1s infinite;
 }
 
@@ -171,7 +171,7 @@ body button {
 #you-win p {
     color: #12c2e9;
     padding-top: 10px;
-    font-family: 'LVDC Game Over 2', sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 #new-game-button {
