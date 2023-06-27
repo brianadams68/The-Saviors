@@ -28,19 +28,19 @@ class Ship {
     move() {
         this.left += this.directionX;
         this.top += this.directionY;
-        if (this.left < 50) {
-            this.left = 50
+        if (this.left < 20) {
+            this.left = 20
         }
-        if (this.top < 130) {
-            this.top = 130
+        if (this.top < 30) {
+            this.top = 30
         }
         // handles right hand side
-        if (this.left > this.gameScreen.offsetWidth - this.with - 180) {
-            this.left = this.gameScreen.offsetWidth - this.with - 180
+        if (this.left > this.gameScreen.offsetWidth - this.with - 100) {
+            this.left = this.gameScreen.offsetWidth - this.with - 100
         }
         // handles bottom side
-        if (this.top > this.gameScreen.offsetHeight - this.height - 380) {
-            this.top = this.gameScreen.offsetHeight - this.height - 380;
+        if (this.top > this.gameScreen.offsetHeight - this.height - 180) {
+            this.top = this.gameScreen.offsetHeight - this.height - 180;
         }
 
         this.updatePosition();

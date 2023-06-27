@@ -21,8 +21,7 @@ body {
 
 #game-start {
     display: block;
-    flex-direction: row;
-    justify-content: end;
+    height: 100vh;;
 }
 
 #game-container {
@@ -109,11 +108,10 @@ body {
 body button {
     font-size: 30px;
     background-color: #1A004D;
-    color: #12c2e9;
+    color: lightgrey;
     padding: 20px 40px;
     border: 2%;
     border-color: #12c2e9;
-    box-shadow: 0;
     border-radius: 8px;
     font-family: sans-serif;
     -webkit-transition: all .15s ease-in-out;
@@ -121,9 +119,10 @@ body button {
 }
 
 #start-button {
-    align-self: flex-end;
-    box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
-    border: 3px solid #ff575700;
+    transform: translateY(1600%);
+    background-color: transparent;
+    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
+    border: 3px solid #FF5757;
 }
 
 #start-button:hover {
