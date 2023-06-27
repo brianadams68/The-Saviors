@@ -6,11 +6,11 @@ class Ship {
         this.height = 110
         this.top = 500
         this.left = 300
-        this.bullets = [];
-        this.bulletSpeed = 5;
-        this.canShoot = true;
         this.directionX = 0
         this.directionY = 0
+        this.bullets = [];
+        this.bulletSpeed = 5;
+        this.canShoot = true
         this.element = document.createElement('img')
 
         this.element.src = './images/ship1.png'
@@ -51,6 +51,18 @@ class Ship {
         this.element.style.left = `${this.left}px`
     }
 
+    shoot() {
+        this.bullets.push(new Bullet(this.gameScreen, this.left, this.top))
+        console.log(this.bullets)
+      }
+
+    updateBullets() {
+        for (let i = this.bullets.length - 1; i >= 0; i--) {
+          const bullet = this.bullets[i];
+          bullet.update();
+        }
+      }
+    
     didCollide(obstacle) {
         const playerRect = this.element.getBoundingClientRect();
         const obstacleRect = obstacle.element.getBoundingClientRect();
@@ -66,32 +78,4 @@ class Ship {
             return false;
         }
     }
-
-    //Bullets
-
-    // Evento de escucha para el disparo
-    shoot() {
-        // Crear una nueva bala y agregarla al arreglo de balas
-        const bullet = new Bullet(this.gameScreen, this.left, this.top);
-        this.bullets.push(bullet);
-    
-        // Establecer un temporizador para controlar la frecuencia de disparo
-        this.canShoot = false;
-        setTimeout(() => {
-          this.canShoot = true;
-        }, 300); // Puedes ajustar el valor de tiempo según tus necesidades
-      }
-
-      moveBullets() {
-        // Mover todas las balas en el arreglo
-        this.bullets.forEach((bullet) => {
-          bullet.move();
-    
-          // Si la bala está fuera de la pantalla, eliminarla del arreglo
-          if (bullet.left > this.gameScreen.offsetWidth) {
-            bullet.element.remove();
-            this.bullets.splice(this.bullets.indexOf(bullet), 1);
-          }
-        });
-      }
 }

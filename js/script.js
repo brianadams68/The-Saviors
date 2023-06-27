@@ -13,12 +13,12 @@ window.addEventListener('load', () => {
         game.start()
         document.addEventListener('keydown', event => {
             const key = event.key;
-            const possibleKeyStrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown", "Space"];
+            const possibleKeyStrokes = ["ArrowLeft", "ArrowUp", "ArrowRight", "ArrowDown", " "];
 
             if (possibleKeyStrokes.includes(key)) {
                 event.preventDefault();
 
-                // Update ship directionX and directionY based on the key pressed
+                
                 switch (key) {
                     case "ArrowLeft":
                         game.ship.directionX = -5;
@@ -32,12 +32,13 @@ window.addEventListener('load', () => {
                     case "ArrowDown":
                         game.ship.directionY = 4;
                         break
-                    case "Space":
-                        game.ship.canShoot();
-                        break;
+                    case ' ':
+                            game.ship.canShoot = true;
+                            game.ship.shoot();
+                            break;
                 }
 
-                console.log(game.ship.directionX, game.ship.directionY)
+                console.log(game.ship.directionX, game.ship.directionY, game.ship.canShoot)
             }
         })
 
@@ -49,7 +50,7 @@ window.addEventListener('load', () => {
             if (possibleKeystrokes.includes(key)) {
                 event.preventDefault();
 
-                // Update ship directionX and directionY based on the key pressed
+                
                 switch (key) {
                     case "ArrowLeft":
                     case "ArrowRight":

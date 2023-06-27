@@ -128,3 +128,25 @@ body button {
     border: 3px solid #FF5757;
     color: #FF5757;
 }
+
+#you-won {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/youWon.gif);
+}
+
+#you-won h1 {
+    padding-top: 40%;
+    color: #12c2e9;
+    font-family: 'LVDC Game Over 2', sans-serif;
+}
+
+#you-won p {
+    color: #12c2e9;
+    padding-top: 10px;
+    font-family: 'LVDC Game Over 2', sans-serif;
+}

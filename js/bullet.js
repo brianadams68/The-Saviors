@@ -1,34 +1,50 @@
 class Bullet {
+    constructor(gameScreen, left, top) {
+      this.gameScreen = gameScreen;
+      this.width = 60;
+      this.height = 30;
+      this.left = left;
+      this.top = top;
+      this.speed = 5;
+      this.element = document.createElement('img');
+  
+      this.element.src = './images/bullet.png';
+      this.element.style.position = 'absolute';
+  
+      this.element.style.width = `${this.width}px`;
+      this.element.style.height = `${this.height}px`;
 
-    constructor(gameScreen, shipLeft, shipTop) {
-        this.gameScreen = gameScreen
-        this.width = 5
-        this.height = 10
-        this.element = document.createElement('img')
-
-        this.element.src = './images/bullet.png'
-        this.element.style.position = 'absolute'
-
-        this.element.style.width = `${this.width}px`
-        this.element.style.height = `${this.height}px`
-
-        // Ajustar la posición inicial de la bala con respecto a la nave
-        this.left = shipLeft + 80; // Ajusta el valor según la posición de la nave
-        this.top = shipTop + 40; // Ajusta el valor según la posición de la nave
-
-        this.element.style.left = `${this.left}px`;
-        this.element.style.top = `${this.top}px`;
-
-        this.gameScreen.appendChild(this.element)
+      this.element.style.top = `${this.top}px`
+      this.element.style.right = `${this.right}px`
+  
+      this.gameScreen.appendChild(this.element);
     }
-
+  
     move() {
-        this.right += 3
-
+        this.left += 3
+        
         this.updatePosition();
     }
 
     updatePosition() {
-        this.element.style.left = `${this.left}px`;
+        this.element.style.top = `${this.top}px`
+        this.element.style.left = `${this.left}px`
     }
-}
+
+    didCollide(obstacle) {
+        const bulletsRect = this.element.getBoundingClientRect();
+        const obstacleRect = obstacle.element.getBoundingClientRect();
+
+        if (
+            bulletsRect.left < obstacleRect.right &&
+            bulletsRect.right > obstacleRect.left &&
+            bulletsRect.top < obstacleRect.bottom &&
+            bulletsRect.bottom > obstacleRect.top
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+  }
+  
