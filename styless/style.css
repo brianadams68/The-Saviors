@@ -1,10 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');     
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
     margin: 0;
     padding: 0;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body button {
+    font-size: 30px;
+    background-color: #1A004D;
+    color: lightgrey;
+    padding: 20px 40px;
+    border: 2%;
+    border-color: #12c2e9;
+    border-radius: 8px;
+    font-family: sans-serif;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+}
+
+/*Game Start Screen*/
+
+#game-start {
+    display: block;
 }
 
 #myVideo {
@@ -17,32 +36,28 @@ body {
     top: 0;
     bottom: 0;
     z-index: -1;
-  }
-
-#game-start {
-    display: block;
 }
+
+#start-button {
+    transform: translateY(1630%);
+    background-color: transparent;
+    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
+    border: 3px solid #FF5757;
+}
+
+#start-button:hover {
+    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
+    border: 3px solid #FF5757;
+    color: #FF5757;
+}
+
+/*Game Screen*/
 
 #game-container {
     display: flex;
     width: 100vw;
     justify-content: space-around;
-    color:  green;
-}
-
-.stats {     
-    font-size: 25px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border-bottom: solid 4px green;
-    border-right: solid 4px green;
-    border-radius: 8px;
-}
-
-.live-killed {
-    padding-top: 11px;
-    border-bottom: solid 3px green;
-    border-radius: 5px;
+    color: green;
 }
 
 #game-screen {
@@ -65,6 +80,29 @@ body {
     }
 }
 
+.stats {
+    font-size: 25px;
+    padding-left: 10px;
+    padding-right: 5px;
+    box-shadow: 0 40px 70px green;
+    border-radius: 5px;
+    /* border-bottom: solid 4px green;
+    border-right: solid 4px green;
+    border-radius: 8px;*/
+
+}
+
+.live-killed {
+    padding-top: 11px;
+    box-shadow: 0 40px 70px green;
+    border-radius: 5px;
+    /*border-bottom: solid 3px green;
+    border-radius: 8px;*/
+}
+
+
+/*Game Over Screen*/
+
 #game-over {
     display: none;
     width: 100vw;
@@ -78,55 +116,57 @@ body {
 #game-over h1 {
     padding-top: 40%;
     font-family: 'Press Start 2P', cursive;
-    font-size:3em;
-    text-align:center;
+    font-size: 3em;
+    text-align: center;
     animation: example 1s infinite;
 }
 
 @keyframes example {
-    0%{color:lime; text-shadow:0 0 20px green}
-    25%{color:green; text-shadow:2px 2px 2px lime; transform: translate(-2px,1px)}
-    40%{color:lime; text-shadow:none; transform: translate(0,0)}
-    50%{color:green; text-shadow:5px 5px 2px blue, -5px -5px 2px red; transform: translate(0px,5px)}
-    70%{color:lime; text-shadow:none; transform: translate(0,0)}
-    80%{color:lime; text-shadow:0 0 20px green; transform: translate(-2px,1px)}
-    100%{color:lime; text-shadow:none;}
-  }
+    0% {
+        color: lime;
+        text-shadow: 0 0 20px green
+    }
+
+    25% {
+        color: green;
+        text-shadow: 2px 2px 2px lime;
+        transform: translate(-2px, 1px)
+    }
+
+    40% {
+        color: lime;
+        text-shadow: none;
+        transform: translate(0, 0)
+    }
+
+    50% {
+        color: green;
+        text-shadow: 5px 5px 2px blue, -5px -5px 2px red;
+        transform: translate(0px, 5px)
+    }
+
+    70% {
+        color: lime;
+        text-shadow: none;
+        transform: translate(0, 0)
+    }
+
+    80% {
+        color: lime;
+        text-shadow: 0 0 20px green;
+        transform: translate(-2px, 1px)
+    }
+
+    100% {
+        color: lime;
+        text-shadow: none;
+    }
+}
 
 #game-over p {
     color: lime;
     padding-top: 10px;
     font-family: 'Press Start 2P', cursive;
-}
-
-.logo-img {
-    width: 450px;
-}
-
-body button {
-    font-size: 30px;
-    background-color: #1A004D;
-    color: lightgrey;
-    padding: 20px 40px;
-    border: 2%;
-    border-color: #12c2e9;
-    border-radius: 8px;
-    font-family: sans-serif;
-    -webkit-transition: all .15s ease-in-out;
-    transition: all .15s ease-in-out;
-}
-
-#start-button {
-    transform: translateY(1630%);
-    background-color: transparent;
-    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
-    border: 3px solid #FF5757;
-}
-
-#start-button:hover {
-    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
-    border: 3px solid #FF5757;
-    color: #FF5757;
 }
 
 #restart-button {
@@ -141,6 +181,8 @@ body button {
     border: 1px solid green;
     color: green;
 }
+
+/*Winner Screen*/
 
 #you-win {
     display: none;
@@ -160,14 +202,46 @@ body button {
 }
 
 @keyframes example {
-    0%{color:lime; text-shadow:0 0 20px green}
-    25%{color:green; text-shadow:2px 2px 2px lime; transform: translate(-2px,1px)}
-    40%{color:lime; text-shadow:none; transform: translate(0,0)}
-    50%{color:green; text-shadow:5px 5px 2px blue, -5px -5px 2px red; transform: translate(0px,5px)}
-    70%{color:lime; text-shadow:none; transform: translate(0,0)}
-    80%{color:lime; text-shadow:0 0 20px green; transform: translate(-2px,1px)}
-    100%{color:lime; text-shadow:none;}
-  }
+    0% {
+        color: lime;
+        text-shadow: 0 0 20px green
+    }
+
+    25% {
+        color: green;
+        text-shadow: 2px 2px 2px lime;
+        transform: translate(-2px, 1px)
+    }
+
+    40% {
+        color: lime;
+        text-shadow: none;
+        transform: translate(0, 0)
+    }
+
+    50% {
+        color: green;
+        text-shadow: 5px 5px 2px blue, -5px -5px 2px red;
+        transform: translate(0px, 5px)
+    }
+
+    70% {
+        color: lime;
+        text-shadow: none;
+        transform: translate(0, 0)
+    }
+
+    80% {
+        color: lime;
+        text-shadow: 0 0 20px green;
+        transform: translate(-2px, 1px)
+    }
+
+    100% {
+        color: lime;
+        text-shadow: none;
+    }
+}
 
 #you-win p {
     color: lime;
