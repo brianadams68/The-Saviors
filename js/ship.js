@@ -56,7 +56,7 @@ class Ship {
         this.bullets.push(bullet);
       }
       
-      updateBullets() {
+    updateBullets() {
         for (let i = this.bullets.length - 1; i >= 0; i--) {
           const bullet = this.bullets[i];
           bullet.move();

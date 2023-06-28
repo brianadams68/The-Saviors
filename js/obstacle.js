@@ -22,7 +22,7 @@ class Obstacle  {
     }
 
     move() {
-        this.right += 3
+        this.right += 4
         
         this.updatePosition();
     }
