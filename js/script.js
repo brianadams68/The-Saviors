@@ -20,7 +20,7 @@ window.addEventListener('load', () => {
             if (possibleKeyStrokes.includes(key)) {
                 event.preventDefault();
 
-                
+
                 switch (key) {
                     case "ArrowLeft":
                         game.ship.directionX = -5;
@@ -35,9 +35,9 @@ window.addEventListener('load', () => {
                         game.ship.directionY = 4;
                         break
                     case ' ':
-                            game.ship.canShoot = true;
-                            game.ship.shoot();
-                            break;
+                        game.ship.canShoot = true;
+                        game.ship.shoot();
+                        break;
                 }
 
                 console.log(game.ship.directionX, game.ship.directionY, game.ship.canShoot)
@@ -52,7 +52,7 @@ window.addEventListener('load', () => {
             if (possibleKeystrokes.includes(key)) {
                 event.preventDefault();
 
-                
+
                 switch (key) {
                     case "ArrowLeft":
                     case "ArrowRight":
@@ -70,17 +70,17 @@ window.addEventListener('load', () => {
     startButton.addEventListener('click', function () {
         startGame();
         let mySound = new Audio("../audio/battle.mp3");
-            mySound.loop = true;
-            mySound.volume = 0.5;
-
-            mySound.addEventListener("timeupdate", function () {
-                if (mySound.currentTime >= mySound.duration - 0.5) {
-                    mySound.currentTime = 0;
-                }
-            });
+        mySound.loop = true;
+        mySound.volume = 0.5;
         
-            mySound.play();
+
+        mySound.addEventListener("timeupdate", function () {
+            if (mySound.currentTime >= mySound.duration - 0.5) {
+                mySound.currentTime = 0;
+            }
         });
+        mySound.play();
+    });
 
     restartButton.addEventListener('click', () => {
         location.reload()

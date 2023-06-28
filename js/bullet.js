@@ -3,9 +3,9 @@ class Bullet {
       this.gameScreen = gameScreen;
       this.width = 60;
       this.height = 30;
-      this.left = left;
+      this.left = left
       this.top = top;
-      this.speed = 5;
+      this.speed = 8;
       this.element = document.createElement('img');
   
       this.element.src = './images/shoot.png';
@@ -21,7 +21,7 @@ class Bullet {
     }
   
     move() {
-        this.left += 5
+        this.left += this.speed;
         
         this.updatePosition();
     }

@@ -31,8 +31,8 @@ class Ship {
         if (this.left < 20) {
             this.left = 20
         }
-        if (this.top < 30) {
-            this.top = 30
+        if (this.top < 60) {
+            this.top = 60
         }
         // handles right hand side
         if (this.left > this.gameScreen.offsetWidth - this.with - 100) {
@@ -52,15 +52,19 @@ class Ship {
     }
 
     shoot() {
-        this.bullets.push(new Bullet(this.gameScreen, this.left, this.top))
-        console.log(this.bullets)
+        const bullet = (new Bullet(this.gameScreen, this.left + 145, this.top + 35));
+        this.bullets.push(bullet);
       }
-
-    updateBullets() {
+      
+      updateBullets() {
         for (let i = this.bullets.length - 1; i >= 0; i--) {
           const bullet = this.bullets[i];
-          bullet.update();
-        }
+          bullet.move();
+          if (bullet.left > this.gameScreen.offsetWidth) {
+            bullet.element.remove();
+            this.bullets.splice(i, 1);
+          } 
+        }  
       }
     
     didCollide(obstacle) {

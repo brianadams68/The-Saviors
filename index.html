@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="./images/t.png"/>
     <link rel="stylesheet" href="./styless/style.css" />
     <title>The Saviors</title>
 </head>
@@ -14,7 +14,7 @@
         <!-- #game-start is initially shown on the game start screen -->
         <div id="game-start">
             <video autoplay muted loop id="myVideo">
-                <source src="./images/Dark Blue Futuristic Game Starting Twitch Background.mp4" type="video/mp4">
+                <source src="./images/background.mp4" type="video/mp4">
             </video>
             <button id="start-button">Start Game</button>
         </div>
@@ -22,9 +22,9 @@
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen">
             <div id="game-container">
-                <h2>Stats: </h2>
-                <p>DC killed: <span id="score">0</span></p>
-                <p>Lives: <span id="lives">3</span></p>
+                <p class="stats">Stats: </p>
+                <p class="live-killed">DC killed: <span id="score">0</span></p>
+                <p class="live-killed">Lives: <span id="lives">3</span></p>
             </div>
         </div>
 

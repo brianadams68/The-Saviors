@@ -29,11 +29,11 @@ class Game {
 
     gameLoop() {
         this.update();
-    
+
         if (Math.random() > 0.98 && this.obstacle.length < 30) {
             this.obstacle.push(new Obstacle(this.gameScreen));
         }
-    
+
         if (this.isGameOver) {
             this.endGame();
         }
@@ -42,7 +42,7 @@ class Game {
         }
         requestAnimationFrame(() => this.gameLoop());
     }
-    
+
 
     update() {
         this.ship.move()
@@ -54,10 +54,10 @@ class Game {
             if (this.ship.didCollide(obstacle)) {
                 obstacle.element.remove();
                 this.lives -= 1
-                document.getElementById('lives').textContent = this.lives; 
+                document.getElementById('lives').textContent = this.lives;
             } else if (obstacle.left > this.gameScreen.offsetHeight) {
                 this.score += 1
-                document.getElementById('score').textContent = this.score; 
+                document.getElementById('score').textContent = this.score;
             } else {
                 obstacleToKeep.push(obstacle)
             }
@@ -72,7 +72,7 @@ class Game {
                     obstacle.element.remove();
                     bullets.element.remove();
                     this.score += 1;
-                    document.getElementById('score').textContent = this.score; 
+                    document.getElementById('score').textContent = this.score;
                 }
             });
         });
@@ -83,7 +83,7 @@ class Game {
             this.isGameOver = true
         }
 
-        if(this.score === 10) {
+        if (this.score === 10) {
             this.youDidWin = true
         }
     }
@@ -94,12 +94,12 @@ class Game {
 
         this.gameOver.style.width = `${this.width}vw`
         this.gameOver.style.height = `${this.height}vh`
-    
+
         // Hide game screen
         this.gameScreen.style.display = 'none'
         // Show end game screen
         this.gameOver.style.display = 'block'
-      }
+    }
 
     youWon() {
         this.ship.element.remove()
@@ -107,10 +107,10 @@ class Game {
 
         this.youWin.style.width = `${this.width}vw`
         this.youWin.style.height = `${this.height}vh`
-    
+
         // Hide game screen
         this.gameScreen.style.display = 'none'
         // Show winner screen
         this.youWin.style.display = 'block'
-      }
+    }
 }

@@ -8,7 +8,7 @@ body {
 }
 
 #myVideo {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     object-fit: cover;
     position: fixed;
@@ -21,31 +21,29 @@ body {
 
 #game-start {
     display: block;
-    height: 100vh;;
 }
 
 #game-container {
     display: flex;
     width: 100vw;
-    justify-content: flex-start;
-    color:  #12c2e9;
+    justify-content: space-around;
+    color:  green;
 }
 
-#game-container h2 {
+.stats {     
+    font-size: 25px;
     padding-left: 10px;
     padding-right: 5px;
-    border-bottom: solid 5px #12c2e9;
-    border-right: solid 5px #12c2e9;
+    border-bottom: solid 4px green;
+    border-right: solid 4px green;
     border-radius: 8px;
 }
 
-#game-container p {
-    padding-left: 15px;
-    padding-top: 15px;
-    border-bottom: solid 3px #12c2e9;
-    border-radius: 10px;
+.live-killed {
+    padding-top: 11px;
+    border-bottom: solid 3px green;
+    border-radius: 5px;
 }
-
 
 #game-screen {
     display: none;
@@ -96,7 +94,7 @@ body {
   }
 
 #game-over p {
-    color: #12c2e9;
+    color: lime;
     padding-top: 10px;
     font-family: 'Press Start 2P', cursive;
 }
@@ -119,7 +117,7 @@ body button {
 }
 
 #start-button {
-    transform: translateY(1600%);
+    transform: translateY(1630%);
     background-color: transparent;
     box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
     border: 3px solid #FF5757;
@@ -132,14 +130,16 @@ body button {
 }
 
 #restart-button {
-    box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
+    color: lime;
+    background-color: transparent;
+    box-shadow: 0 0 10px 0 lime inset, 0 0 20px 2px lime;
     border: 3px solid #ff575700;
 }
 
 #restart-button:hover {
-    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
-    border: 3px solid #FF5757;
-    color: #FF5757;
+    box-shadow: 0 0 10px 0 green inset, 0 0 20px 2px green;
+    border: 1px solid green;
+    color: green;
 }
 
 #you-win {
@@ -170,18 +170,14 @@ body button {
   }
 
 #you-win p {
-    color: #12c2e9;
+    color: lime;
     padding-top: 10px;
     font-family: 'Press Start 2P', cursive;
 }
 
 #new-game-button {
-    box-shadow: 0 0 10px 0 #ff575700 inset, 0 0 20px 2px #ff575700;
+    color: lime;
+    background-color: transparent;
+    box-shadow: 0 0 10px 0 lime inset, 0 0 20px 2px #ff575700;
     border: 3px solid #ff575700;
-}
-
-#new-game-button:hover {
-    box-shadow: 0 0 10px 0 #FF5757 inset, 0 0 20px 2px #FF5757;
-    border: 3px solid #FF5757;
-    color: #FF5757;
 }
