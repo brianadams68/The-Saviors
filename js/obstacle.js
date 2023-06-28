@@ -1,14 +1,19 @@
-class Obstacle  {
+class Obstacle {
 
     constructor(gameScreen) {
         this.gameScreen = gameScreen
         this.right = Math.floor(Math.random() * 90 + 10)
-        this.top =  Math.floor(Math.random() * 900 + 100)
+        this.top = Math.floor(Math.random() * 900 + 100)
         this.width = 90
         this.height = 90
         this.element = document.createElement('img')
 
-        this.element.src = './images/dc-logo.png'
+        const imageSources = ['./images/dc-logo.png', './images/superman.png', './images/batman.png', './images/flash.png', './images/aquaman.png'];
+        const randomIndex = Math.floor(Math.random() * imageSources.length);
+        const imageSrc = imageSources[randomIndex];
+
+
+        this.element.src = imageSrc;
         this.element.style.position = 'absolute'
 
 
@@ -23,7 +28,7 @@ class Obstacle  {
 
     move() {
         this.right += 4
-        
+
         this.updatePosition();
     }
 

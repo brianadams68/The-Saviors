@@ -25,6 +25,7 @@ class Game {
         this.gameScreen.style.display = 'block'
 
         this.gameLoop()
+
     }
 
     gameLoop() {
@@ -112,5 +113,11 @@ class Game {
         this.gameScreen.style.display = 'none'
         // Show winner screen
         this.youWin.style.display = 'block'
+
+        let wonAudio = new Audio("../audio/HulkRoar.mp3");
+        wonAudio.volume = 0.5;
+        this.mySound.pause();
+        wonAudio.play();
+
     }
 }

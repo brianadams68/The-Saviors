@@ -69,10 +69,11 @@ window.addEventListener('load', () => {
 
     startButton.addEventListener('click', function () {
         startGame();
+
         let mySound = new Audio("../audio/battle.mp3");
         mySound.loop = true;
         mySound.volume = 0.5;
-        
+
 
         mySound.addEventListener("timeupdate", function () {
             if (mySound.currentTime >= mySound.duration - 0.5) {
