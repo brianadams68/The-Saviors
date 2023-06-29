@@ -45,7 +45,7 @@ class Ship {
 
         this.updatePosition();
     }
-    
+
     updatePosition() {
         this.element.style.top = `${this.top}px`
         this.element.style.left = `${this.left}px`
@@ -54,19 +54,19 @@ class Ship {
     shoot() {
         const bullet = (new Bullet(this.gameScreen, this.left + 145, this.top + 35));
         this.bullets.push(bullet);
-      }
-      
+    }
+
     updateBullets() {
         for (let i = this.bullets.length - 1; i >= 0; i--) {
-          const bullet = this.bullets[i];
-          bullet.move();
-          if (bullet.left > this.gameScreen.offsetWidth) {
-            bullet.element.remove();
-            this.bullets.splice(i, 1);
-          } 
-        }  
-      }
-    
+            const bullet = this.bullets[i];
+            bullet.move();
+            if (bullet.left > this.gameScreen.offsetWidth) {
+                bullet.element.remove();
+                this.bullets.splice(i, 1);
+            }
+        }
+    }
+
     didCollide(obstacle) {
         const playerRect = this.element.getBoundingClientRect();
         const obstacleRect = obstacle.element.getBoundingClientRect();

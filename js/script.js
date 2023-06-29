@@ -88,6 +88,6 @@ window.addEventListener('load', () => {
     });
 
     newGameButton.addEventListener('click', () => {
-        location.reload()
+        location.reload();
     });
 });
