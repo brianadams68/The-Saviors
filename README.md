@@ -107,3 +107,17 @@ The saviors went into space to try to stop the bad comics from reaching the eart
   - move()
   - updatePosition()
   - didCollide()
+
+  ## Extra Links 
+
+  # Slides
+
+  https://docs.google.com/presentation/d/1TzUqL1osTYPjAPTKGNa5spB5-OUmp5OEeVpGeVjZf7s/edit#slide=id.g2562742bb3d_0_0 
+
+  # Trello 
+
+  https://trello.com/invite/b/oj1snXHF/ATTIde4b349cf7c71bef8bc7a1be48377d9725717BA9/first-game-module-1 
+
+  # Deploy
+
+  https://brianadams68.github.io/The-Saviors/ 
