@@ -75,6 +75,10 @@ body button {
         background-position: 1000px 0;
     }
 
+    95% {
+        background-position: 0 0;
+    }
+
     100% {
         background-position: -50px 0;
     }
@@ -86,20 +90,13 @@ body button {
     padding-right: 5px;
     box-shadow: 0 40px 70px green;
     border-radius: 5px;
-    /* border-bottom: solid 4px green;
-    border-right: solid 4px green;
-    border-radius: 8px;*/
-
 }
 
 .live-killed {
     padding-top: 11px;
     box-shadow: 0 40px 70px green;
     border-radius: 5px;
-    /*border-bottom: solid 3px green;
-    border-radius: 8px;*/
 }
-
 
 /*Game Over Screen*/
 
